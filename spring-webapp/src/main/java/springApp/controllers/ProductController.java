@@ -37,5 +37,15 @@ public class ProductController {
         return "redirect:/products/";
     }
 
+    @GetMapping("/find_by_id")
+    public String showFindByIdForm() {
+        return "find_product_by_id";
+    }
 
+    @PostMapping("/find_by_id")
+    public String findById(@PathVariable Long id, Model model) {
+        model.addAttribute("product", productService.findProductById(id));
+        System.out.println(id);
+        return "product";
+    }
 }

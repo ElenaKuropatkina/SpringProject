@@ -23,6 +23,7 @@
 
     <modules>
         <module>lesson-1-network-chat</module>
+        <module>spring-webapp</module>
     </modules>
 
 </project>

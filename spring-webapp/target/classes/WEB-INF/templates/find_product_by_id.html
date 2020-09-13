@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Spring MVC</title>
+</head>
+
+<body>
+<h1>Найти товар по id</h1>
+
+<form th:action="@{/products/find_by_id}" method="post">
+    <input type="text" name="id" placeholder="Введите id товара"/>
+    <input type="submit"/>
+</form>
+
+<br>
+<a th:href="@{/}">на Главную страницу</a>
+
+</body>
+</html>
