@@ -1,0 +1,22 @@
+DROP TABLE products IF EXISTS;
+CREATE TABLE IF NOT EXISTS products (id bigserial, title VARCHAR(255), price int, PRIMARY KEY (id));
+INSERT INTO products (title, price) VALUES ('IPhone4', 200),
+('IPhone4s', 250),
+('IPhone5', 300),
+('IPhone5s', 350),
+('IPhone5SE', 400),
+('IPhone6', 450),
+('IPhone7', 500),
+('IPhone8', 500),
+('IPhoneX', 800),
+('IPhoneXR', 700),
+('IPhoneXS', 800),
+('IPhone11', 750),
+('IPhone8SE', 600),
+('IPad', 400),
+('IPad2', 500),
+('IPadMini', 350),
+('MacAir13', 800),
+('MacAir15', 1000),
+('Airpods', 100),
+('Airpods2', 120);
