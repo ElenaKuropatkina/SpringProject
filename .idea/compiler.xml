@@ -6,8 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="lesson1networkchat" />
         <module name="springwebapp" />
+        <module name="lesson3hibernate" />
+        <module name="lesson4springdata" />
+        <module name="lesson1networkchat" />
       </profile>
     </annotationProcessing>
   </component>

@@ -24,6 +24,8 @@
     <modules>
         <module>lesson-1-network-chat</module>
         <module>spring-webapp</module>
+        <module>lesson3-hibernate</module>
+        <module>lesson4-springdata</module>
     </modules>
 
 </project>
