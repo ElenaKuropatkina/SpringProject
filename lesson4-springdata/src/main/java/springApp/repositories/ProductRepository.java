@@ -1,17 +1,16 @@
 package springApp.repositories;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-import springApp.models.Product;
 
-import java.util.List;
+        import org.springframework.data.jpa.repository.JpaRepository;
+        import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+        import org.springframework.stereotype.Repository;
+        import springApp.models.Product;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long>, JpaSpecificationExecutor<Product> {
 
-    List<Product> findAllByPriceGreaterThan(int minPrice);
+    Product findOneByTitle(String title);
 
-    List<Product> findAllByPriceLessThan(int maxPrice);
+    Product findOneById(Long id);
 
-    List<Product> findAllByPriceBetween(int minPrice, int maxPrice);
 }

@@ -1,6 +1,9 @@
 package springApp.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import springApp.models.Product;
 import springApp.repositories.ProductRepository;
@@ -17,27 +20,25 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
-    public List<Product> findAllProducts() {
-        return productRepository.findAll();
+    public List<Product> findAll(Specification<Product> specification) {
+        return productRepository.findAll(specification);
     }
+
+    public  Product findById(Long id){
+        return productRepository.findOneById(id);
+    }
+
 
     public Product updateProduct(Product product) {
         return productRepository.save(product);
     }
 
-    public Product findById(Long id) {
-        return productRepository.findById(id).get();
+
+    public Page<Product> findAll(Specification<Product> spec, Integer page) {
+        if (page < 1) {
+            page = 1;
+        }
+        return productRepository.findAll(spec, PageRequest.of(page - 1, 5));
     }
 
-    public List<Product> findByMinPrice(int minPrice) {
-        return productRepository.findAllByPriceGreaterThan(minPrice);
-    }
-
-    public List<Product> findByMaxPrice(int maxPrice) {
-        return productRepository.findAllByPriceLessThan(maxPrice);
-    }
-
-    public List<Product> find(int minPrice, int maxPrice) {
-        return productRepository.findAllByPriceBetween(minPrice, maxPrice);
-    }
 }
